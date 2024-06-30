@@ -41,3 +41,14 @@ export const generateDefaultStaticPaths = () => {
 
   return paths;
 };
+
+export const generateLandingPageStaticPaths = () => {
+  const langs = ["en", "zh"];
+
+  const paths = [];
+
+  for (let lang of langs) {
+    paths.push({ params: { lang } });
+  }
+  return paths;
+};
