@@ -2,7 +2,7 @@ import type { Chain } from "viem";
 import * as chains from "viem/chains";
 
 function createCaseInsensitiveObject(obj: any) {
-  const lowerCaseObj = {};
+  const lowerCaseObj: any = {};
   for (let key in obj) {
     lowerCaseObj[key.toLowerCase()] = obj[key];
   }
