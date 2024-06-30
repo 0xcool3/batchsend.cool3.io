@@ -1,11 +1,81 @@
 ---
 import { generateStaticPaths } from "@/utils/generateStaticPaths";
+import i18next, { t, changeLanguage } from "i18next";
+
+import ButtonTest from "@/components/ButtonTest";
 export function getStaticPaths() {
   return generateStaticPaths();
 }
 const { network, lang, tokentype } = Astro.params;
+changeLanguage(lang);
 ---
 
-<p>{lang}</p>
-<p>{tokentype}</p>
-<p>{network}</p>
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- HTML Meta Tags -->
+    <title>batchsend</title>
+    <meta
+      name="description"
+      content="Effortlessly decode Base64 strings with the fast and user-friendly."
+    />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://batchsend.cool3.io" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="batchsend" />
+    <meta
+      property="og:description"
+      content="Effortlessly decode Base64 strings with the fast and user-friendly."
+    />
+    <meta
+      property="og:image"
+      content="https://batchsend.cool3.io/android-chrome-144x144.png"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="batchsend.cool3.io" />
+    <meta
+      property="twitter:url"
+      content="https://batchsend.cool3.io"
+    />
+    <meta name="twitter:title" content="batchsend" />
+    <meta
+      name="twitter:description"
+      content="Effortlessly decode Base64 strings with the fast and user-friendly."
+    />
+    <meta
+      name="twitter:image"
+      content="https://batchsend.cool3.io/android-chrome-144x144.png"
+    />
+    <meta name="twitter:creator" content="@atshelchin" />
+    <meta name="twitter:site" content="@atshelchin" />
+
+    <!-- Others -->
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body class="">
+    <div class="flex items-center h-screen justify-center p-4">
+      <div class="sm:max-w-4xl h-full w-full">
+        {t("hi")}
+        <ButtonTest client:visible />
+        <p>{lang}</p>
+        <p>{tokentype}</p>
+        <p>{network}</p>
+        
+        
+      </div>
+    </div>
+  </body>
+</html>

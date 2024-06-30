@@ -5,9 +5,11 @@ import { generateLandingPageStaticPaths } from "@/utils/generateStaticPaths";
 export function getStaticPaths() {
   return generateLandingPageStaticPaths();
 }
+
+const { lang } = Astro.params;
 ---
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
 
