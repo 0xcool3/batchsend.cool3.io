@@ -1,0 +1,10 @@
+---
+import { generateDefaultStaticPaths } from "@/utils/generateStaticPaths";
+export function getStaticPaths() {
+  return generateDefaultStaticPaths();
+}
+const { network, tokentype } = Astro.params;
+---
+
+<p>{tokentype}</p>
+<p>{network}</p>
