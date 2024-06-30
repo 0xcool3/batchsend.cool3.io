@@ -16,7 +16,7 @@ export default function Component() {
     <ThemeProvider>
       <div className="flex h-full w-full max-w-full flex-col gap-8">
         <div className="flex w-full flex-wrap items-center justify-center gap-2 border-b-small border-divider pb-2 sm:justify-between">
-          <p className="text-base font-medium">batchsend</p>
+          <p className="text-base font-medium">sendman</p>
           <Tabs
             className="justify-center"
             selectedKey={mode}

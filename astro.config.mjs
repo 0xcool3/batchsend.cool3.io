@@ -6,6 +6,6 @@ import astroI18next from "astro-i18next";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://batchsend.cool3.io",
+  site: "https://sendman.cool3.io",
   integrations: [react(), astroI18next(), tailwind(), sitemap()],
 });
